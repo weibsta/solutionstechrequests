@@ -1,12 +1,19 @@
 import csv
-
-# Don't call this function
 from ast import parse
 from turtle import clear
 
+'''
+Instructions:
+1. Copy/paste solutions technical requests and throw it into a .txt file
+2. Run sanitize_file() to remove unneeded text
+3. Rename out.txt to existing file name
+4. Run write_to_spreadsheet
+'''
+
+# replace file name with txt dump of solutions technical requests
 filename = "strrecentcleaned.txt"
 
-
+# Don't call this function
 def sanitize_file():
     # Open file and read lines
     f = open(filename, "r")
@@ -20,7 +27,8 @@ def sanitize_file():
             f.write(line)
 
     f.close()
-
+    
+    #TODO combine file opens
     input = open(filename, 'r')
     output = open('out.txt', 'w')
     clean = input.read().replace(":white_circle: ", "").replace(":large_blue_circle: ", "").replace(":white_check_mark:", "").replace(":red_circle: ", "").replace(":large_green_circle: ", "")
